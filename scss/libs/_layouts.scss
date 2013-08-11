@@ -46,8 +46,8 @@
 
 @mixin column($columns, $append : 0, $prepend : 0) {
     float           : left;
-    margin-left     : gutter-calc($append);
-    margin-right    : gutter-calc($prepend);
+    margin-left     : gutter-calc($prepend);
+    margin-right    : gutter-calc($append);
     position        : relative;
     width           : column-calc($columns);
 }
