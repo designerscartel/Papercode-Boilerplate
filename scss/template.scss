@@ -117,13 +117,12 @@ ul 						{ @include unordered-inside }
 
 .column {
 	background:#EEE;
-	@include column(2, 1);
+	@include column(2, 0, 1);
 }
 
 .column-large {
 	background:#EEE;
 	@include column(4);
-    padding:0;
 }
 
 /* ::Media queries */

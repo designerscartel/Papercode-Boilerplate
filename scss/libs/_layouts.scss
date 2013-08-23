@@ -9,10 +9,10 @@
 // Column Width Calculator
 // -------------------------------------------------------
 
-// Get the base width for each column	
+// Get the base width for each column   
 
-@function column-width() {	
-	@return ( 100% / $column-count );
+@function column-width() {  
+    @return ( 100% / $column-count );
 }
 
 
@@ -21,10 +21,9 @@
 
 // Return the reqiured width based on the width needed minus the gutters
 
-@function column-calc($columns, $gutterless : false) {
-	$width : column-width() * $columns;
-	@if $gutterless == true { @return $width; }
-	@return  $width - ( $gutter * 2 ); 			// subtract the gutter width
+@function column-calc($columns) {
+    $width : column-width() * $columns;
+           @return  $width;
 }
 
 
@@ -34,8 +33,7 @@
 // Return the the required gutter with the required extra if needed
 
 @function gutter-calc($columns) {
-	@if $columns == 0 { @return $gutter }
-	@return ( column-width() * $columns ) + $gutter;
+        @return ( column-width() * $columns ) ;
 }
 
 
@@ -44,35 +42,28 @@
 
 // Returns the css needed for the a single column
 
-@mixin column($columns, $append : 0, $prepend : 0) {
-    float           : left;
-    margin-left     : gutter-calc($prepend);
-    margin-right    : gutter-calc($append);
-    position        : relative;
-    width           : column-calc($columns);
+@mixin column($columns, $prepend : 0, $append : 0) {
+        float                   : left;
+        margin-left         : gutter-calc($prepend);
+        margin-right       : gutter-calc($append);
+        position              : relative;
+        width                 : column-calc($columns);
+        padding             : 0 $gutter;
 }
 
-// Returns the css needed for the a single column without gutters
-
-@mixin column-less($columns) {
-	float			: left;
-    position        : relative;
-	width			: column-calc($columns, true);
-}
 
 // Base css for basic grid system to extend
 
-.grid-column {
-    float           : left;
-    margin          : 0 gutter-calc(0);
-    position        : relative;
+[class^="column-"] {
+        float               : left;
+        padding         : 0 $gutter;
+        position          :relative;
 }
 
 // Create the basic base css for each column automaticly
 
 @for $i from 1 through $column-count {
     .column-#{$i} {
-        @extend     .grid-column;
-        width       : column-calc($i);
+            width       : column-calc($i);
     }
 }

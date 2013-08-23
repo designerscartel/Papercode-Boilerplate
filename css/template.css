@@ -68,50 +68,50 @@ textarea {
   resize: vertical;
 }
 
-.grid-column, .column-1, .column-2, .column-3, .column-4, .column-5, .column-6, .column-7, .column-8, .column-9, .column-10 {
+[class^="column-"] {
   float: left;
-  margin: 0 1%;
+  padding: 0 10px;
   position: relative;
 }
 
 .column-1 {
-  width: 8%;
+  width: 10%;
 }
 
 .column-2 {
-  width: 18%;
+  width: 20%;
 }
 
 .column-3 {
-  width: 28%;
+  width: 30%;
 }
 
 .column-4 {
-  width: 38%;
+  width: 40%;
 }
 
 .column-5 {
-  width: 48%;
+  width: 50%;
 }
 
 .column-6 {
-  width: 58%;
+  width: 60%;
 }
 
 .column-7 {
-  width: 68%;
+  width: 70%;
 }
 
 .column-8 {
-  width: 78%;
+  width: 80%;
 }
 
 .column-9 {
-  width: 88%;
+  width: 90%;
 }
 
 .column-10 {
-  width: 98%;
+  width: 100%;
 }
 
 /* ::Clearfixs and extends. Use which suits best */
@@ -587,20 +587,21 @@ ul {
 .column {
   background: #EEE;
   float: left;
-  margin-left: 11%;
-  margin-right: 1%;
+  margin-left: 0%;
+  margin-right: 10%;
   position: relative;
-  width: 18%;
+  width: 20%;
+  padding: 0 10px;
 }
 
 .column-large {
   background: #EEE;
   float: left;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
   position: relative;
-  width: 38%;
-  padding: 0;
+  width: 40%;
+  padding: 0 10px;
 }
 
 /* ::Media queries */
