@@ -22,18 +22,7 @@
 // Return the reqiured width based on the width needed minus the gutters
 
 @function column-calc($columns) {
-    $width : column-width() * $columns;
-           @return  $width;
-}
-
-
-// Gutter Calculation
-// -------------------------------------------------------
-
-// Return the the required gutter with the required extra if needed
-
-@function gutter-calc($columns) {
-        @return ( column-width() * $columns ) ;
+    @return ( column-width() * $columns );
 }
 
 
@@ -44,8 +33,8 @@
 
 @mixin column($columns, $prepend : 0, $append : 0) {
         float                   : left;
-        margin-left         : gutter-calc($prepend);
-        margin-right       : gutter-calc($append);
+        margin-left         : column-calc($prepend);
+        margin-right       : column-calc($append);
         position              : relative;
         width                 : column-calc($columns);
         padding             : 0 $gutter;

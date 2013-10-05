@@ -628,7 +628,9 @@ ul {
   }
 }
 @media screen and (max-width: 769px) {
-  -webkit-text-size-adjust: none;
+  body {
+    -webkit-text-size-adjust: none;
+  }
 }
 /* ::State styles */
 /* ------------------------------------------------------------ */
