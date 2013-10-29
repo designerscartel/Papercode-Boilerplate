@@ -26,6 +26,7 @@
 @import "libs/reset";
 @import "libs/settings";
 @import "libs/mixins";
+@import "libs/icons";
 @import "libs/layouts";
 
 
@@ -56,6 +57,7 @@
 
 html {
 	font-size: 100%;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -123,6 +125,21 @@ ul 						{ @include unordered-inside }
 	background:#EEE;
 	@include column(4);
 }
+
+.icon-ref {
+	list-style:none;
+	@include margin-leader(4);
+
+	li {
+		float: left;
+		height: 95px;
+		margin: 0 20px 0 0;
+		padding: 0 20px;
+		text-align: center;
+		font-size: 2em;
+		width:40px; }
+}
+
 
 /* ::Media queries */
 /* ------------------------------------------------------------ */
