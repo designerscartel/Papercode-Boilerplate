@@ -43,7 +43,7 @@
 
 // Base css for basic grid system to extend
 
-[class^="column-"] {
+[class^="col-"] {
         float               : left;
         padding         : 0 $gutter;
         position          :relative;
@@ -52,7 +52,7 @@
 // Create the basic base css for each column automaticly
 
 @for $i from 1 through $column-count {
-    .column-#{$i} {
+    .col-#{$i} {
             width       : column-calc($i);
     }
 }

@@ -57,7 +57,7 @@
 
 html {
 	font-size: 100%;
-	-webkit-font-smoothing: antialiased;
+	@include advancedtype();
 }
 
 body {
@@ -149,27 +149,22 @@ ul 						{ @include unordered-inside }
 // Below examples use a mobile-first approach
 
 
-// Eg for 480px
-@media screen and (min-width: em-font(480px)) {
-	.container {
-		width: 95%;
-	}
+@media screen and (min-width: em-font($bp-small)) {
+	@import "breakpoints/bp-small";
 }
 
-
-// Eg for 800px
-@media screen and (min-width: em-font(800px)) {
-	.container {
-		min-width: em-font(780px);
-	}
+@media screen and (min-width: em-font($bp-med)) {
+	@import "breakpoints/bp-med";
 }
 
-// Eg for 1240px
-@media screen and (min-width: em-font(1240px)) {
-	.container {
-		max-width: em-font(1080px);
-	}
+@media screen and (min-width: em-font($bp-large)) {
+	@import "breakpoints/bp-large";
 }
+
+@media screen and (min-width: em-font($bp-xl)) {
+	@import "breakpoints/bp-xl";
+}
+
 
 // Print styles
 @media print {
@@ -208,7 +203,6 @@ ul 						{ @include unordered-inside }
 .is-lowercase {
 	text-transform: lowercase;
 }
-
 
 
 /* ::Debugs and #grid by Jon Gibbins */
