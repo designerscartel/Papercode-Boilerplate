@@ -1,0 +1,52 @@
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+
+// -------------------------------------------------------------------------------------------------------
+
+// All the below can be removed if need be
+
+// --
+
+.container {
+  @extend .clearfix;
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* Example styles - you'll most likey want to remove*/
+header {
+  @include padding-leader(4);
+  @include padding-trailer(2);
+  @include trailer(6);
+  background: #333;
+  h1 { color: #fff; }
+}
+
+section 				{ @extend .clearfix; }
+h1 						{ font-weight: 600; }
+ol 						{ @include ordered-inside }
+ul 						{ @include unordered-inside }
+
+.column {
+  background:#EEE;
+  @include column(2, 0, 1);
+}
+
+.column-large {
+  background:#EEE;
+  @include column(4);
+}
+
+.icon-ref {
+  list-style:none;
+  @include margin-leader(4);
+
+  li {
+    float: left;
+    height: 95px;
+    margin: 0 20px 0 0;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 2em;
+    width:40px; }
+}

@@ -23,7 +23,9 @@ jQuery(document).ready(function($)
 	//	Use camel case to separate words.
 	/***********************************************/
 	
-	var instanceVariable = 'An instance variable, available to all methods of this closure.';	
+	var instanceVariable = 'An instance variable, available to all methods of this closure.',
+        carousel = $('.carousel'),
+        window = $(window);
 	
 	
 	/***********************************************/
@@ -39,7 +41,39 @@ jQuery(document).ready(function($)
         $('.flexslider').flexslider({
             animation: "slide"
         });
-        
+
+        window.resize(function() {
+            reloadCar();
+        }).resize();
+
+        function reloadCar() {
+            carousel.carouFredSel({
+                width: '100%',
+                auto : {
+                    play: false
+                },
+                swipe: {
+                    onTouch: true,
+                    onMouse: true,
+                    options: {
+                        excludedElements: "button, input, select, textarea, .noSwipe"
+                    }
+                },
+                items: {
+                    visible: 3,
+                    start: -1
+                },
+                scroll: {
+                    items: 1,
+                    duration: 1000,
+                    timeoutDuration: 3000
+                },
+                prev: '#prev',
+                next: '#next'
+            });
+
+        }
+        reloadCar();
         
 	}();
 

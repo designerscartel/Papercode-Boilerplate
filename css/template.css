@@ -71,6 +71,7 @@ textarea {
 /*  icons.scss  
 --------------------------------------------- */
 /* Icons
+* Entypo pictograms by Daniel Bruce www.ico.com
 */
 @font-face {
   font-family: 'entypo';
@@ -1724,6 +1725,97 @@ html[xmlns] .slides {
     right: 0;
   }
 }
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel .slide {
+  display: block;
+  float: left;
+  height: 186px;
+  padding: 0;
+  width: 300px;
+}
+.carousel a {
+  display: block;
+  padding: 2px;
+  position: relative;
+}
+.carousel img {
+  display: block;
+  font-size: 0;
+  width: 100%;
+}
+.carousel .layout2 a.image0 {
+  float: left;
+  width: 66.66666666666666%;
+}
+.carousel .layout2 a.image1 {
+  float: left;
+  width: 33.33333333333333%;
+}
+.carousel .layout2 a.image2 {
+  clear: right;
+  float: right;
+  width: 33.33333333333333%;
+}
+.carousel .layout3 a.image1 {
+  float: left;
+  width: 30%;
+}
+.carousel .layout3 a.image2 {
+  float: left;
+  width: 30%;
+}
+.carousel .layout3 a.image3 {
+  float: right;
+  width: 40%;
+}
+.carousel .layout4 a.image0 {
+  float: left;
+  width: 33.33333333333333%;
+}
+.carousel .layout4 a.image1 {
+  float: right;
+  width: 66.66666666666666%;
+}
+.carousel .layout4 a.image2 {
+  float: left;
+  clear: left;
+  width: 66.66666666666666%;
+}
+.carousel .layout4 a.image3 {
+  float: right;
+  width: 33.33333333333333%;
+}
+
+#prev, #next {
+  background: #FFF;
+  display: block;
+  height: 50px;
+  width: 50px;
+  top: 43%;
+  position: absolute;
+}
+
+#next {
+  right: 0;
+}
+
+@media screen and (min-width: 30em) {
+  .carousel .slide {
+    width: 500px;
+    height: 333px;
+  }
+}
+@media screen and (min-width: 62.5em) {
+  .carousel .slide {
+    width: 750px;
+    height: 500px;
+  }
+}
+/* ------------------------------------------------------------ */
 /* ::Layout styles - Layouts hold one or more modules together. */
 /* ------------------------------------------------------------ */
 .container {
